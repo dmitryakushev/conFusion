@@ -64,8 +64,7 @@
                     <li><a href="contactus.html"><i class="fa fa-envelope-o"></i> Contact</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a data-toggle="modal" data-target="#loginModal">
-                        <span class="glyphicon glyphicon-log-in"></span> Login</a> </li>
+                    <li><a id="loginButton"><span class="glyphicon glyphicon-log-in"></span> Login</a> </li>
                 </ul>
             </div>
         </div>
@@ -122,7 +121,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-2" >
                     <p style="padding:40px;"></p>
-                    <a type="button" data-toggle="modal" data-target="#reserveModal" class="btn btn-warning" 
+                    <a id="reserveTableButton" type="button" class="btn btn-warning" 
                        href="#reserveTableForm">Reserve tables</a>
                 </div>
             </div>
@@ -433,8 +432,8 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-<!-- javascript code that activates tooltips -->
     <script>
+//      javascript code that activates tooltips
         $(document).ready(function(){
             $("#mycarousel").carousel( {interval: 2000} );
             $("#carousel-pause").click(function(){
@@ -444,6 +443,17 @@
                 $("#mycarousel").carousel("cycle");
             })
         })
+
+//      javascript code that shows login form, when click login button        
+        $('#loginButton').click(function(){
+            $('#loginModal').modal('show')
+        })
+
+//      javascript code that shows reserve table form, when click reserve table button 
+        $('#reserveTableButton').click(function(){
+            $('#reserveModal').modal('show')
+        })
+        
     </script>
 
 </body>
